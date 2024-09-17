@@ -1,0 +1,126 @@
+<html>
+<header>
+	<h1>Form Fillup</h1>
+</header>
+
+<body>
+	<div class="row">
+		<label>Name :</label>
+		<input type="text" name="name" id="name">
+		<span id="name-error" class="error-message" style="color:red;"></span>
+    </div>
+
+    <div class="row">
+		<label>Email :</label>
+		<input type="email" name="email" id="email">
+		<span id="email-error" class="error-message" style="color:red;"></span>
+    </div>
+
+    <div class="row">
+		<label>Contact Number :</label>
+		<input type="text" name="contact_number" id="contact_number">
+    </div>
+
+    <div class="row">
+		<label>Gender :</label>
+		<input type="radio" name="gender" id="gender_male" value="male"> Male
+		<input type="radio" name="gender" id="gender_female" value="female"> Female
+		<span id="gender-error" class="error-message" style="color:red;"></span>
+    </div>
+
+    <div class="row">
+		<label>Profile Pic :</label>
+		<input type="file" name="profile_pic" id="profile_pic" accept="image/png, image/gif, image/jpeg" />
+    </div>
+
+    <div class="row">
+		<label>Hobbies :</label>
+		<input type="checkbox" name="hobbies" id="hobbies">Reading
+		<input type="checkbox" name="hobbies" id="hobbies">Coding
+		<input type="checkbox" name="hobbies" id="hobbies">Music
+    </div>
+
+    <div class="row">
+		<label>State :</label>
+		<select name="state" id="state">
+			<option>Select State</option>
+			<option value="1">Gujarat</option>
+			<option value="2">Rajsthan</option>
+		</select>
+    </div>
+
+    <div class="row">
+		<label>City :</label>
+		<select name="city" id="city">
+			<option>Select City</option>
+			<option value="1">Ahmedabad</option>
+			<option value="2">Udaipur</option>
+		</select>
+    </div>
+
+    <div class="row">
+    	<button type="button" id="submitFom" onclick = "return validateForm();"> Submit </button>
+    </div>
+</body>
+
+</html>
+
+<script type="text/javascript">
+
+const inputField = document.querySelector('#contact_number');
+
+inputField.onkeydown = (event) => {
+	  if(isNaN(event.key) && event.key !== 'Backspace') {
+	    event.preventDefault();
+	  }
+	};
+
+function validateForm()
+{
+	name = document.getElementById("name").value;
+	email = document.getElementById("email").value;
+	contact_number = document.getElementById("contact_number").value;
+	gender_male = document.getElementById("gender_male").checked;
+	gender_female = document.getElementById("gender_female").checked;
+	profile_pic = document.getElementById("profile_pic").value;
+	hobbies = document.getElementById("hobbies").value;
+	state = document.getElementById("state").value;
+	city = document.getElementById("city").value;
+	
+	const nameError = document.getElementById(
+        "name-error"
+    );
+
+	const emailError = document.getElementById(
+        "email-error"
+    );
+
+	const genderError = document.getElementById(
+        "gender-error"
+    );
+
+	
+
+	nameError.textContent = "";
+	emailError.textContent = "";
+	genderError.textContent = "";
+
+	if(name == "")
+	{
+		nameError.textContent =
+            "Please enter your name properly.";
+	}
+
+	if(email == "")
+	{
+		emailError.textContent =
+            "Please enter your email properly.";
+	}
+
+	if(gender_male == false && gender_female == false)
+	{
+		genderError.textContent =
+            "Please select gender.";
+	}
+}
+</script>

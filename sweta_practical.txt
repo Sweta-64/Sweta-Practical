@@ -1,0 +1,21 @@
+Following points have done :
+
+1) Prepare form with given data input.
+2) Perfomed client side server validations
+	 - Name [required]
+	 - Email [email type, required]
+	 - Contact number [Don't allow alphabeticals into input when try to enter]
+	 - Gender [required]
+	 - Put validations for profile pic to accept jpeg,jpg and png
+3) Make laravel project using command from composer
+4) Make migrations of user,state and city table
+5) Migrated all tables using command line
+6) MAke seeders for predefined data for state and cities
+7) Seeded table with data using command line
+8) Make controller and make api for store data [ Didn't completed due to getting error about some access in postman while posting data]
+
+Personnal note :
+
+- I performed junior laravel developer and didn't woked on apis and advanced functionality.
+- I peromed few apis but didn't work from scratch.
+- I have tried api but in this practical, due to api concepts not able to move ahead with store data and all.But definatily will learn.
